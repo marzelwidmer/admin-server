@@ -1,4 +1,4 @@
-# Spring
+## Spring
 spring:
   profiles:
     active: default
@@ -13,21 +13,51 @@ spring:
           management-context-path: /manage
       routes:
         endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+  security:
+    user:
+      name: user
+      password: '{cipher}b90b4efc95fe1b35d1cdc0ee5a9297c759bbfe33ef798160a58a160de557f394'
+      roles: USER
 
-# Security
+## Security
 security:
+  user:
+    username: user
+    password: '{cipher}b90b4efc95fe1b35d1cdc0ee5a9297c759bbfe33ef798160a58a160de557f394'
+  basic:
+    enabled: false
   boot:
     admin:
       discovery:
         converter:
           management-context-path: /manage
-  ignored: /**
 
+## Server
+server:
+  port: 8081
 
-# Infos Build
+## Info
 info:
   build:
     artifact: @project.artifactId@
     name: @project.name@
     description: @project.description@
     version: @project.version@
+
+# Logging
+logging:
+  path: log/
+  level.root: warn
+
+
+# Management
+management:
+  info:
+     git:
+       mode: full
+  health:
+    refresh:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /manage

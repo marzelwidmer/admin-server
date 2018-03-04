@@ -1,4 +1,4 @@
-package ch.helsana.microservice.admin;
+package ch.keepcalm.microservice.admin;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
@@ -12,10 +12,10 @@ import org.springframework.security.config.annotation.authentication.configurati
 @EnableAdminServer
 @EnableGlobalAuthentication
 @EnableDiscoveryClient
-public class SpringBootAdmin {
+public class AdminServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootAdmin.class, args);
+        SpringApplication.run(AdminServer.class, args);
     }
 }
 
