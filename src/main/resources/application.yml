@@ -1,0 +1,33 @@
+# Spring
+spring:
+  profiles:
+    active: default
+    include: infrastructure
+  boot:
+    admin:
+      discovery:
+        ignored-services: spring-boot-admin
+        enabled: true
+        converter:
+          health-endpoint-path: /manage
+          management-context-path: /manage
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream
+
+# Security
+security:
+  boot:
+    admin:
+      discovery:
+        converter:
+          management-context-path: /manage
+  ignored: /**
+
+
+# Infos Build
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
