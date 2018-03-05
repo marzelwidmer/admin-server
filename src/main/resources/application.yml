@@ -21,11 +21,6 @@ spring:
 
 ## Security
 security:
-  user:
-    username: user
-    password: '{cipher}b90b4efc95fe1b35d1cdc0ee5a9297c759bbfe33ef798160a58a160de557f394'
-  basic:
-    enabled: false
   boot:
     admin:
       discovery:
